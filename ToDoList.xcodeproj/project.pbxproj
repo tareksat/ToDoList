@@ -13,6 +13,7 @@
 		85F173671E3918460014005A /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85F173651E3918460014005A /* ToDoList.xcdatamodeld */; };
 		85F173691E3918460014005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F173681E3918460014005A /* Assets.xcassets */; };
 		85F1736C1E3918460014005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F1736A1E3918460014005A /* LaunchScreen.storyboard */; };
+		85F173741E39DC980014005A /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F173731E39DC980014005A /* task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		85F173681E3918460014005A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85F1736B1E3918460014005A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F1736D1E3918460014005A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85F173731E39DC980014005A /* task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				85F1735E1E3918460014005A /* AppDelegate.swift */,
 				85F173601E3918460014005A /* Main.swift */,
+				85F173731E39DC980014005A /* task.swift */,
 				85F173621E3918460014005A /* Main.storyboard */,
 				85F173681E3918460014005A /* Assets.xcassets */,
 				85F1736A1E3918460014005A /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F173741E39DC980014005A /* task.swift in Sources */,
 				85F173611E3918460014005A /* Main.swift in Sources */,
 				85F173671E3918460014005A /* ToDoList.xcdatamodeld in Sources */,
 				85F1735F1E3918460014005A /* AppDelegate.swift in Sources */,
