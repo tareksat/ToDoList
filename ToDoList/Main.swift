@@ -12,8 +12,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableList.dataSource = self
         tableList.delegate = self
         
-        taskList = makeTasks()
-    }
+        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -38,25 +37,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = taskList[indexPath.row]
-        print(task.toString())
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "completeSegue", sender: task)
     }
     
     
-    
-    func makeTasks() -> [Task]{
-        var tasksArray:[Task] = []
-        
-        tasksArray.append(Task(_name:"Halliburton" , _important: true))
-        tasksArray.append(Task(_name:"IOS" , _important: true))
-        tasksArray.append(Task(_name:"Android" , _important: false))
-        tasksArray.append(Task(_name:"Java" , _important: false))
-        tasksArray.append(Task(_name:"Pyhton" , _important: true))
-        tasksArray.append(Task(_name:"Raspberry pi" , _important: false))
-        
-        return tasksArray
-    }
     
     @IBAction func addSegue(_ sender: Any) {
         performSegue(withIdentifier: "addSegue", sender: nil)

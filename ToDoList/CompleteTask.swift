@@ -15,7 +15,6 @@ class CompleteTask: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(task.toString())
         name.text = task.name
     }
     

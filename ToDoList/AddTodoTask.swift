@@ -18,8 +18,9 @@ class AddTodoTask: UIViewController {
     @IBAction func addAction(_ sender: Any) {
         let name = nameField.text!
         let important = importantSwitch.isOn
-        let task = Task(_name: name, _important: important)
-        print(task.toString())
+        let task = Task()
+        task.name = name
+        task.important = important
         main.taskList.append(task)
         main.tableList.reloadData()
         navigationController!.popViewController(animated: true)
