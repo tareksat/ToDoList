@@ -8,21 +8,24 @@ class AddTodoTask: UIViewController {
    
     @IBOutlet weak var importantSwitch: UISwitch!
     
-    var main = MainViewController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
     @IBAction func addAction(_ sender: Any) {
-        let name = nameField.text!
+        let name = nameField.text
         let important = importantSwitch.isOn
-        let task = Task()
-        task.name = name
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let task = Task(context: context)
+        task.name = name!
         task.important = important
-        main.taskList.append(task)
-        main.tableList.reloadData()
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        
         navigationController!.popViewController(animated: true)
        
     }

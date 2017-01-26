@@ -5,7 +5,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableList: UITableView!
     
     var taskList: [Task] = []
-    var selectedIndex = 0
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,10 +23,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = UITableViewCell()
         var displayText: String = ""
         if(taskList[indexPath.row].important){
-            displayText = "‼️\(taskList[indexPath.row].name)"
+            displayText = "‼️\(taskList[indexPath.row].name!)"
         }
         else{
-            displayText = "\(taskList[indexPath.row].name)"
+            displayText = "\(taskList[indexPath.row].name!)"
         }
         cell.textLabel?.text = displayText
         return cell
@@ -37,7 +36,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = taskList[indexPath.row]
-        selectedIndex = indexPath.row
         performSegue(withIdentifier: "completeSegue", sender: task)
     }
     
@@ -47,17 +45,31 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "addSegue", sender: nil)
     }
     
+    
+    func getTasks(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+            taskList =  try context.fetch(Task.fetchRequest()) as! [Task]
+            print(taskList)
+        }
+        catch{
+            print("we have an error!")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getTasks()
+        tableList.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addSegue"{
-            let nextVC = segue.destination as! AddTodoTask
-            nextVC.main = self
-        }
+                    }
         else{
             let completeTask = segue.destination as! CompleteTask
             
-            completeTask.task = sender as! Task
-            completeTask.selectedIndex = selectedIndex
-            completeTask.previousVC = self
+            completeTask.task = sender as? Task
+//            completeTask.previousVC = self
             
         }
     }
