@@ -1,11 +1,11 @@
 import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableList: UITableView!
     
     var taskList: [Task] = []
-  
+    var selectedIndex = 0
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,13 +33,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.text = displayText
         return cell
     }
-
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(taskList[indexPath.row].toString())
-//        performSegue(withIdentifier: "completeSegue", sender: taskList[indexPath.row])
+        let task = taskList[indexPath.row]
+        print(task.toString())
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "completeSegue", sender: task)
     }
+    
+    
     
     func makeTasks() -> [Task]{
         var tasksArray:[Task] = []
@@ -50,18 +54,28 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tasksArray.append(Task(_name:"Java" , _important: false))
         tasksArray.append(Task(_name:"Pyhton" , _important: true))
         tasksArray.append(Task(_name:"Raspberry pi" , _important: false))
-            
+        
         return tasksArray
     }
-
+    
     @IBAction func addSegue(_ sender: Any) {
         performSegue(withIdentifier: "addSegue", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! AddTodoTask
-        nextVC.main = self
+        if segue.identifier == "addSegue"{
+            let nextVC = segue.destination as! AddTodoTask
+            nextVC.main = self
+        }
+        else{
+            let completeTask = segue.destination as! CompleteTask
+            
+            completeTask.task = sender as! Task
+            completeTask.selectedIndex = selectedIndex
+            completeTask.previousVC = self
+            
+        }
     }
-
+    
 }
 
