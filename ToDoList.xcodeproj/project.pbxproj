@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85E534D11E3A400D00065CDD /* CompleteTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E534D01E3A400D00065CDD /* CompleteTask.swift */; };
 		85F1735F1E3918460014005A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F1735E1E3918460014005A /* AppDelegate.swift */; };
 		85F173611E3918460014005A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F173601E3918460014005A /* Main.swift */; };
 		85F173641E3918460014005A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F173621E3918460014005A /* Main.storyboard */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		85E534D01E3A400D00065CDD /* CompleteTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTask.swift; sourceTree = "<group>"; };
 		85F1735B1E3918460014005A /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F1735E1E3918460014005A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F173601E3918460014005A /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			children = (
 				85F1735E1E3918460014005A /* AppDelegate.swift */,
 				85F173601E3918460014005A /* Main.swift */,
-				85E534D01E3A400D00065CDD /* CompleteTask.swift */,
 				85F173731E39DC980014005A /* task.swift */,
 				85F173751E39ED340014005A /* AddTodoTask.swift */,
 				85F173621E3918460014005A /* Main.storyboard */,
@@ -151,7 +148,6 @@
 				85F173741E39DC980014005A /* task.swift in Sources */,
 				85F173761E39ED340014005A /* AddTodoTask.swift in Sources */,
 				85F173611E3918460014005A /* Main.swift in Sources */,
-				85E534D11E3A400D00065CDD /* CompleteTask.swift in Sources */,
 				85F173671E3918460014005A /* ToDoList.xcdatamodeld in Sources */,
 				85F1735F1E3918460014005A /* AppDelegate.swift in Sources */,
 			);
@@ -315,7 +311,6 @@
 				85F173721E3918460014005A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
