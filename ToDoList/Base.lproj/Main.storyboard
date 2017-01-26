@@ -45,7 +45,7 @@
                     <connections>
                         <outlet property="tableList" destination="Po7-uk-dtA" id="xI5-I1-Kh0"/>
                         <segue destination="mUw-k1-BXN" kind="show" identifier="addSegue" id="Zsn-2e-gdw"/>
-                        <segue destination="XX1-pj-iIj" kind="show" identifier="completeSegue" id="gFt-9P-N0f"/>
+                        <segue destination="XX1-pj-iIj" kind="show" identifier="completeSegue" id="L7l-Gb-xT7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="1564" y="-562.66866566716647"/>
         </scene>
-        <!--View Controller-->
+        <!--Complete Task-->
         <scene sceneID="TAa-S8-CfS">
             <objects>
-                <viewController id="XX1-pj-iIj" sceneMemberID="viewController">
+                <viewController id="XX1-pj-iIj" customClass="CompleteTask" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sdJ-bi-rSh"/>
                         <viewControllerLayoutGuide type="bottom" id="raz-be-XCS"/>
@@ -139,12 +139,37 @@
                     <view key="view" contentMode="scaleToFill" id="z35-UP-8YA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dJ-gZ-B1S">
+                                <rect key="frame" x="58" y="106" width="259" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIY-cx-cnp">
+                                <rect key="frame" x="165" y="209" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="completeTask:" destination="XX1-pj-iIj" eventType="touchUpInside" id="3cb-cZ-8wV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OIY-cx-cnp" firstAttribute="top" secondItem="3dJ-gZ-B1S" secondAttribute="bottom" constant="82" id="09F-yL-KHL"/>
+                            <constraint firstItem="OIY-cx-cnp" firstAttribute="centerX" secondItem="z35-UP-8YA" secondAttribute="centerX" id="EQR-dw-PBz"/>
+                            <constraint firstItem="3dJ-gZ-B1S" firstAttribute="centerX" secondItem="z35-UP-8YA" secondAttribute="centerX" id="cL2-en-eBa"/>
+                            <constraint firstItem="3dJ-gZ-B1S" firstAttribute="top" secondItem="sdJ-bi-rSh" secondAttribute="bottom" constant="42" id="f8c-lH-OFd"/>
+                            <constraint firstItem="OIY-cx-cnp" firstAttribute="top" secondItem="3dJ-gZ-B1S" secondAttribute="bottom" constant="82" id="ikn-Ne-mtL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="3dJ-gZ-B1S" id="pFc-DL-RaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2de-rf-tdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="-563"/>
+            <point key="canvasLocation" x="2248.8000000000002" y="158.77061469265368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pOO-Qk-sqU">

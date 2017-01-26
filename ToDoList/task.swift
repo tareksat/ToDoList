@@ -7,6 +7,11 @@ class Task{
         self.important = _important
     }
     
+    init() {
+        name = ""
+        important = false
+    }
+    
     func toString() -> String{
         let str = "Name: \(name) & Importance: \(important)"
         return str
