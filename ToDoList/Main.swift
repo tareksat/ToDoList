@@ -38,6 +38,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(taskList[indexPath.row].toString())
+//        performSegue(withIdentifier: "completeSegue", sender: taskList[indexPath.row])
     }
     
     func makeTasks() -> [Task]{
@@ -53,6 +54,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return tasksArray
     }
 
+    @IBAction func addSegue(_ sender: Any) {
+        performSegue(withIdentifier: "addSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! AddTodoTask
+        nextVC.main = self
+    }
 
 }
 
